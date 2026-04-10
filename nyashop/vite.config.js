@@ -5,7 +5,6 @@ import multer from 'multer'
 import path from 'path'
 import fs from 'fs'
 
-// --- Mock API Logic ---
 let inventory = [
   {
     id: '1',
@@ -38,7 +37,6 @@ const mockApiPlugin = () => ({
     })
     const upload = multer({ storage })
 
-    // JSON body parser for Vite middleware
     server.middlewares.use((req, res, next) => {
       if (req.headers['content-type'] === 'application/json') {
         let body = ''
@@ -52,18 +50,15 @@ const mockApiPlugin = () => ({
       }
     })
 
-    // API Routes
     server.middlewares.use(async (req, res, next) => {
       const url = new URL(req.url, `http://${req.headers.host}`)
       const id = url.pathname.split('/')[2]
 
-      // GET /inventory
       if (url.pathname === '/inventory' && req.method === 'GET') {
         res.setHeader('Content-Type', 'application/json')
         return res.end(JSON.stringify(inventory))
       }
 
-      // GET /inventory/:id
       if (url.pathname.startsWith('/inventory/') && req.method === 'GET' && !url.pathname.endsWith('/photo')) {
         const item = inventory.find(i => i.id === id)
         res.setHeader('Content-Type', 'application/json')
@@ -74,7 +69,6 @@ const mockApiPlugin = () => ({
         return res.end(JSON.stringify(item))
       }
 
-      // POST /register (multipart)
       if (url.pathname === '/register' && req.method === 'POST') {
         return upload.single('photo')(req, res, (err) => {
           if (err) { res.statusCode = 500; return res.end(); }
@@ -92,7 +86,6 @@ const mockApiPlugin = () => ({
         })
       }
 
-      // PUT /inventory/:id (JSON)
       if (url.pathname.startsWith('/inventory/') && req.method === 'PUT' && !url.pathname.endsWith('/photo')) {
         const itemIndex = inventory.findIndex(i => i.id === id)
         if (itemIndex === -1) {
@@ -106,7 +99,6 @@ const mockApiPlugin = () => ({
         return res.end(JSON.stringify(inventory[itemIndex]))
       }
 
-      // PUT /inventory/:id/photo (multipart)
       if (url.pathname.startsWith('/inventory/') && url.pathname.endsWith('/photo') && req.method === 'PUT') {
         return upload.single('photo')(req, res, (err) => {
           if (err) { res.statusCode = 500; return res.end(); }
@@ -123,7 +115,6 @@ const mockApiPlugin = () => ({
         })
       }
 
-      // DELETE /inventory/:id
       if (url.pathname.startsWith('/inventory/') && req.method === 'DELETE') {
         const itemIndex = inventory.findIndex(i => i.id === id)
         if (itemIndex === -1) {
@@ -140,7 +131,6 @@ const mockApiPlugin = () => ({
   }
 })
 
-// https://vite.dev/config/
 export default defineConfig({
   plugins: [
     react(),
