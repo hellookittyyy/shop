@@ -14,9 +14,111 @@ let inventory = [
   },
   {
     id: '2',
-    inventory_name: 'Рожевий нашийник "Princess"',
-    description: 'Нашийник зі стразами та дзвоником для справжньої принцеси.',
-    photo: null
+    inventory_name: 'М\'яка подушка-батон "Довгий Кіт"',
+    description: 'Дуже довгий та м\'який плюшевий котик для обіймів та затишного сну.',
+    photo: '/images/cat-long-pillow.png'
+  },
+  {
+    id: '3',
+    inventory_name: 'Рожевий чокер-нашийник з сердечком',
+    description: 'Елегантний рожевий нашийник-чокер з підвіскою-сердечком для справжніх принцес.',
+    photo: '/images/pink-heart-collar.png'
+  },
+  {
+    id: '4',
+    inventory_name: 'Обруч "Котяче вушка" з дзвіночками',
+    description: 'Стильний аксесуар для косплею або тематичної вечірки з милими вушками та бантиками.',
+    photo: '/images/cat-ears-bells.png'
+  },
+  {
+    id: '5',
+    inventory_name: 'Набір керамічних кружок-котиків',
+    description: 'Набір із двох керамічних горняток, які ідеально доповнюють одне одного.',
+    photo: '/images/cat-ceramic-mugs.png'
+  },
+  {
+    id: '6',
+    inventory_name: 'Нічник "Котик на Місяці"',
+    description: 'Чарівний світильник, що створює казкову атмосферу у вашій кімнаті.',
+    photo: '/images/cat-moon-lamp.png'
+  },
+  {
+    id: '7',
+    inventory_name: 'Блокнот Moleskine Hello Kitty (Red)',
+    description: 'Лімітована серія блокнотів Moleskine у червоному кольорі з улюбленим персонажем.',
+    photo: '/images/hello-kitty-moleskine.png'
+  },
+  {
+    id: '8',
+    inventory_name: 'Футболка "Kitty & Cinnamoroll"',
+    description: 'Мила рожева футболка з принтом Hello Kitty та Cinnamoroll.',
+    photo: '/images/kitty-cinamorol-tshirt.png'
+  },
+  {
+    id: '9',
+    inventory_name: 'Рожеві серветки Hello Kitty',
+    description: 'Набір паперових серветок для святкового столу або щоденного використання.',
+    photo: '/images/hello-kitty-napkins.png'
+  },
+  {
+    id: '10',
+    inventory_name: 'Сумка-шопер "Strawberry Kitty"',
+    description: 'Містка тканева сумка для покупок з яскравим "полуничним" принтом.',
+    photo: '/images/kitty-strawberry-tote.png'
+  },
+  {
+    id: '11',
+    inventory_name: 'Планер Hello Kitty на 2026 рік',
+    description: 'Зручний щоденник для планування ваших справ та мрій на цілий рік.',
+    photo: '/images/kitty-planner-2026.png'
+  },
+  {
+    id: '12',
+    inventory_name: 'Подушка-дакімакура Hello Kitty',
+    description: 'Велика декоративна подушка для комфортного відпочинку.',
+    photo: '/images/kitty-dakimakura.png'
+  },
+  {
+    id: '13',
+    inventory_name: 'Набір горняток Hello Kitty Friends',
+    description: 'Подарунковий набір оригінальних кружок з друзями Hello Kitty.',
+    photo: '/images/hello-kitty-mugs-set.png'
+  },
+  {
+    id: '14',
+    inventory_name: 'Картина "Starry Night Cat"',
+    description: 'Постер у стилі Ван Гога з силуетом котика під зоряним небом.',
+    photo: '/images/cat-starry-night-art.png'
+  },
+  {
+    id: '15',
+    inventory_name: 'Колекція магнітів на холодильник',
+    description: 'Набір милих магнітиків з котиками для вашої кухні.',
+    photo: '/images/cat-fridge-magnets.png'
+  },
+  {
+    id: '16',
+    inventory_name: 'Чохол Hello Kitty для iPhone',
+    description: 'Захисний силіконовий чохол з об\'ємним зображенням Hello Kitty.',
+    photo: '/images/hello-kitty-iphone-case.png'
+  },
+  {
+    id: '17',
+    inventory_name: 'Декоративна гірлянда "Манекі-неко"',
+    description: 'Традиційна японська прикраса для залучення удачі та радості.',
+    photo: '/images/maneki-neko-garland.png'
+  },
+  {
+    id: '18',
+    inventory_name: 'Спіральний блокнот "Kitiki"',
+    description: 'Зручний записник на спіралі для навчання чи нотаток.',
+    photo: '/images/kitiki-spiral-notebook.png'
+  },
+  {
+    id: '19',
+    inventory_name: 'Набір значків-пінів "Cat Power"',
+    description: 'Колекційні металеві піни для рюкзака або одягу.',
+    photo: '/images/cat-badge-pins.png'
   }
 ];
 
