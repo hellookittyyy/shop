@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Pencil, Trash2, Eye, Cat } from 'lucide-react';
 import { inventoryApi } from '../../services/inventoryApi';
-
 const InventoryTable = ({ items, loading, error, onDeleteClick }) => {
   if (loading) {
     return (
@@ -16,7 +15,6 @@ const InventoryTable = ({ items, loading, error, onDeleteClick }) => {
       </div>
     );
   }
-
   if (error) {
     return (
       <div className="bg-red-50 text-red-500 p-8 rounded-[2rem] text-center border-2 border-red-100/50">
@@ -25,7 +23,6 @@ const InventoryTable = ({ items, loading, error, onDeleteClick }) => {
       </div>
     );
   }
-
   if (!items || items.length === 0) {
     return (
       <div className="bg-white/50 backdrop-blur glass-card p-12 rounded-[3rem] text-center border-dashed border-2 border-pink-100">
@@ -39,7 +36,6 @@ const InventoryTable = ({ items, loading, error, onDeleteClick }) => {
       </div>
     );
   }
-
   return (
     <div className="bg-white rounded-[3rem] shadow-[0_16px_48px_rgba(244,143,177,0.06)] overflow-hidden border border-pink-50/50">
       <div className="overflow-x-auto">
@@ -105,5 +101,4 @@ const InventoryTable = ({ items, loading, error, onDeleteClick }) => {
     </div>
   );
 };
-
 export default InventoryTable;

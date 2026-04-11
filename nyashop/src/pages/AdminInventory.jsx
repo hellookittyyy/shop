@@ -5,15 +5,12 @@ import { InventoryContext } from '../hooks/InventoryContext';
 import { inventoryApi } from '../services/inventoryApi';
 import InventoryTable from '../components/inventory/InventoryTable';
 import ConfirmModal from '../components/inventory/ConfirmModal';
-
 const AdminInventory = () => {
   const { items, loading, error, refreshInventory } = useContext(InventoryContext);
   const [deleteModal, setDeleteModal] = useState({ isOpen: false, item: null });
-
   const handleDeleteClick = (item) => {
     setDeleteModal({ isOpen: true, item });
   };
-
   const confirmDelete = async () => {
     try {
       await inventoryApi.deleteItem(deleteModal.item.id);
@@ -24,7 +21,6 @@ const AdminInventory = () => {
       setDeleteModal({ isOpen: false, item: null });
     }
   };
-
   const StatCard = ({ icon: Icon, label, value, color }) => (
     <div className={`p-6 rounded-[2.5rem] bg-white border border-pink-50 flex items-center gap-4 group hover:shadow-xl transition-all duration-500`}>
       <div className={`p-4 rounded-3xl ${color} text-white group-hover:scale-110 transition-transform`}>
@@ -36,10 +32,8 @@ const AdminInventory = () => {
       </div>
     </div>
   );
-
   return (
     <div className="max-w-7xl mx-auto space-y-12 animate-in fade-in slide-in-from-bottom-5 duration-700">
-      
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
         <div className="space-y-2">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-primary-light text-primary rounded-full text-xs font-black uppercase tracking-widest mb-2 border border-primary/10">
@@ -52,7 +46,6 @@ const AdminInventory = () => {
           </h1>
           <p className="text-text-light font-medium text-lg max-w-sm">Manage your collections with feline precision.</p>
         </div>
-        
         <Link 
           to="/inventory/create" 
           className="group relative inline-flex items-center gap-3 bg-gray-950 text-white px-10 py-5 rounded-[2rem] font-black text-lg transition-all hover:scale-105 active:scale-95 shadow-2xl shadow-gray-400 overflow-hidden"
@@ -62,13 +55,11 @@ const AdminInventory = () => {
           <span className="relative z-10">Restock Catnip</span>
         </Link>
       </div>
-
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         <StatCard icon={Package} label="Total Kitties" value={items.length} color="bg-primary" />
         <StatCard icon={TrendingUp} label="Happiness Index" value="98.4%" color="bg-blue-400" />
         <StatCard icon={Users} label="Daily Visitors" value="1,204" color="bg-indigo-400" />
       </div>
-
       <div className="space-y-6">
         <div className="flex items-center justify-between px-2">
            <h3 className="text-2xl font-black text-gray-800 tracking-tighter flex items-center gap-3">
@@ -84,7 +75,6 @@ const AdminInventory = () => {
           onDeleteClick={handleDeleteClick} 
         />
       </div>
-
       <ConfirmModal 
         isOpen={deleteModal.isOpen}
         onClose={() => setDeleteModal({ isOpen: false, item: null })}
@@ -95,5 +85,4 @@ const AdminInventory = () => {
     </div>
   );
 };
-
 export default AdminInventory;
