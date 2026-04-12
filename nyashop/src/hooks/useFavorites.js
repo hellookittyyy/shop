@@ -1,7 +1,5 @@
 import { useState, useEffect } from 'react';
-
 const STORAGE_KEY = 'nya_shop_favorites';
-
 export const useFavorites = () => {
   const [favorites, setFavorites] = useState(() => {
     try {
@@ -12,7 +10,6 @@ export const useFavorites = () => {
       return [];
     }
   });
-
   useEffect(() => {
     try {
       window.localStorage.setItem(STORAGE_KEY, JSON.stringify(favorites));
@@ -20,7 +17,6 @@ export const useFavorites = () => {
       console.error('Error saving favorites to localStorage', error);
     }
   }, [favorites]);
-
   const toggleFavorite = (id) => {
     setFavorites(prevFavorites => {
       if (prevFavorites.includes(id)) {
@@ -30,10 +26,8 @@ export const useFavorites = () => {
       }
     });
   };
-
   const isFavorite = (id) => {
     return favorites.includes(id);
   };
-
   return { favorites, toggleFavorite, isFavorite };
 };
